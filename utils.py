@@ -4,13 +4,12 @@ import re
 from textacy import preprocessing
 from textacy.datasets.imdb import IMDB
 
+
 def read_imdb(subset=None, with_label=True):
     """Read IMDB Dataset (via ``textacy.datasets.imdb.IMDB``).
-
     Args:
         subset (str): subset (e.g `train` / `test`).
         with_label (bool): whether to include only "labeled" samples.
-
     Returns:
         tuple(X[], y[])
     """
@@ -27,16 +26,14 @@ def read_imdb(subset=None, with_label=True):
 
 def preprocess_sentence(sent, lower=True):
     """Pre-process a sentence ( via ``textacy.preprocess` module ).
-
     Args:
         sent (str): text.
         lower (bool): whether to return a lowercase string.
-
     Returns:
         str
     """
     # normalize unicode
-    sent = preprocessing.normalize_whitespace(sent)
+    sent = preprocessing.normalize.unicode(sent)
 
     # deaccent
     sent = preprocessing.remove_accents(sent)
