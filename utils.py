@@ -3,7 +3,6 @@ import re
 
 from textacy import preprocessing
 from textacy.datasets.imdb import IMDB
-from textacy import normalize_whitespace
 
 def read_imdb(subset=None, with_label=True):
     """Read IMDB Dataset (via ``textacy.datasets.imdb.IMDB``).
@@ -37,7 +36,7 @@ def preprocess_sentence(sent, lower=True):
         str
     """
     # normalize unicode
-    sent = normalize_whitespace(sent)
+    sent = preprocessing.normalize_whitespace(sent)
 
     # deaccent
     sent = preprocessing.remove_accents(sent)
