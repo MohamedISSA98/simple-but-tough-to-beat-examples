@@ -36,7 +36,7 @@ def preprocess_sentence(sent, lower=True):
     sent = preprocessing.normalize.unicode(sent)
 
     # deaccent
-    sent = preprocessing.remove_accents(sent)
+    sent = preprocessing.remove.accents(sent)
 
     # replace newline chars
     sent = re.sub("\n|\r", " ", sent)
@@ -45,28 +45,28 @@ def preprocess_sentence(sent, lower=True):
     sent = contractions.fix(sent)
 
     # replace emoji symbols
-    sent = preprocessing.replace_emojis(sent)
+    sent = preprocessing.replace.emojis(sent)
 
     # replace hashtags
-    sent = preprocessing.replace_hashtags(sent)
+    sent = preprocessing.replace.hashtags(sent)
 
     # replace user handles
-    sent = preprocessing.replace_user_handles(sent)
+    sent = preprocessing.replace.user_handles(sent)
 
     # replace currency symbols
-    sent = preprocessing.replace_currency_symbols(sent)
+    sent = preprocessing.replace.currency_symbols(sent)
 
     # replace emails
-    sent = preprocessing.replace_emails(sent)
+    sent = preprocessing.replace.emails(sent)
 
     # replace URLs
-    sent = preprocessing.replace_urls(sent)
+    sent = preprocessing.replace.urls(sent)
 
     # remove punctuation
-    sent = preprocessing.remove_punctuation(sent)
+    sent = preprocessing.remove.punctuation(sent)
 
     # normalize whitespace
-    sent = preprocessing.normalize_whitespace(sent)
+    sent = preprocessing.normalize.whitespace(sent)
 
     if lower:
         sent = sent.lower()
